@@ -48,8 +48,9 @@ mongoose
   .connect(MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: true,
+    // useCreateIndex: true,
+    // useFindAndModify: true,
+    serverSelectionTimeoutMS: 5000,
   })
   .then(() => {
     console.log("Connected to MongoDB");
