@@ -1,7 +1,7 @@
 .top {
   width: 100%;
-  height: 50px;
-  background-color: rgb(231, 231, 231);
+  height: 100px;
+  background-color: rgb(0, 0, 0);
   position: sticky;
   top: 0;
   display: flex;
@@ -24,13 +24,13 @@
 
 .topIcon {
   font-size: 20px;
-  margin-right: 10px;
-  color: #000000;
+  margin-right: 15px;
+  color: #ffffff;
   cursor: pointer;
 }
 
 .topIcon:hover {
-  color: #666;
+  color: #dadada;
 }
 
 .topImg {
@@ -50,7 +50,7 @@
 }
 
 .topListItem:hover {
-  color: #666;
+  color: #dadada;
 }
 
 .topListItem {
@@ -58,16 +58,16 @@
   font-size: 20px;
   font-weight: 600;
   cursor: pointer;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .topSearchIcon {
   font-size: 18px;
-  color: #000000;
+  color: #ffffff;
   cursor: pointer;
   margin-left: 15px;
 }
 
 .topSearchIcon:hover {
-  color: #666;
+  color: #dadada;
 }
