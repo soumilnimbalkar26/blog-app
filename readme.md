@@ -1,0 +1,1 @@
+to start the client and api run npm start
