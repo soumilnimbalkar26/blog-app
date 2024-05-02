@@ -26,7 +26,7 @@ export default function Login() {
   return (
     <div className="login">
       <div className="login-card">
-        <div className="loginTitle">Login</div>
+        <div className="loginTitle">LOGIN</div>
         <form className="loginForm" onSubmit={handleSubmit}>
           <label>Username</label>
           <input
