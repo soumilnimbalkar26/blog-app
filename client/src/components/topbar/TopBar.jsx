@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
+import { motion } from "framer-motion";
 import "./topbar.css";
 
 export default function TopBar() {
@@ -13,38 +14,56 @@ export default function TopBar() {
   return (
     <div className="top">
       <div className="topLeft">
-        <i className="topIcon fab fa-facebook-square"></i>
-        <i className="topIcon fab fa-twitter-square"></i>
-        <i className="topIcon fab fa-pinterest-square"></i>
-        <i className="topIcon fab fa-instagram-square"></i>
+        <motion.i
+          whileHover={{ scale: 1.2 }}
+          className="topIcon fab fa-facebook-square"
+        ></motion.i>
+        <motion.i
+          whileHover={{ scale: 1.2 }}
+          className="topIcon fab fa-twitter-square"
+        ></motion.i>
+        <motion.i
+          whileHover={{ scale: 1.2 }}
+          className="topIcon fab fa-pinterest-square"
+        ></motion.i>
+        <motion.i
+          whileHover={{ scale: 1.2 }}
+          className="topIcon fab fa-instagram-square"
+        ></motion.i>
       </div>
+
       <div className="topCenter">
         <ul className="topList">
-          <li className="topListItem">
+          <motion.li whileHover={{ scale: 1.2 }} className="topListItem">
             <Link className="link" to="/">
               HOME
             </Link>
-          </li>
-          <li className="topListItem">
+          </motion.li>
+          <motion.li whileHover={{ scale: 1.2 }} className="topListItem">
             <Link className="link" to="/about">
               ABOUT
             </Link>
-          </li>
-          <li className="topListItem">
+          </motion.li>
+          <motion.li whileHover={{ scale: 1.2 }} className="topListItem">
             <Link className="link" to="/contact">
               CONTACT
             </Link>
-          </li>
-          <li className="topListItem">
+          </motion.li>
+          <motion.li whileHover={{ scale: 1.2 }} className="topListItem">
             <Link className="link" to="/write">
               WRITE
             </Link>
-          </li>
-          <li className="topListItem" onClick={handleLogout}>
+          </motion.li>
+          <motion.li
+            whileHover={{ scale: 1.2 }}
+            className="topListItem"
+            onClick={handleLogout}
+          >
             {user && "LOGOUT"}
-          </li>
+          </motion.li>
         </ul>
       </div>
+
       <div className="topRight">
         {user ? (
           <Link to="/settings">
@@ -52,19 +71,19 @@ export default function TopBar() {
           </Link>
         ) : (
           <ul className="topList">
-            <li className="topListItem">
+            <motion.li whileHover={{ scale: 1.2 }} className="topListItem">
               <Link className="link" to="/login">
                 LOGIN
               </Link>
-            </li>
-            <li className="topListItem">
+            </motion.li>
+            <motion.li whileHover={{ scale: 1.2 }} className="topListItem">
               <Link className="link" to="/register">
                 REGISTER
               </Link>
-            </li>
+            </motion.li>
           </ul>
         )}
-        <i className="topSearchIcon fas fa-search"></i>
+        {/* <i className="topSearchIcon fas fa-search"></i> */}
       </div>
     </div>
   );
