@@ -1,90 +1,66 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
+import { Logout } from "../../context/Actions";
+import { PF } from "../../config";
 import { motion } from "framer-motion";
 import "./topbar.css";
 
+const navItems = [
+  { label: "HOME", path: "/" },
+  { label: "ABOUT", path: "/about" },
+  { label: "CONTACT", path: "/contact" },
+  { label: "WRITE", path: "/write" },
+];
+
+const NavItem = ({ label, path, onClick }) => (
+  <motion.li whileHover={{ scale: 1.2 }} className="topListItem" onClick={onClick}>
+    {path ? (
+      <Link className="link" to={path}>
+        {label}
+      </Link>
+    ) : (
+      label
+    )}
+  </motion.li>
+);
+
 export default function TopBar() {
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:5000/images/";
 
   const handleLogout = () => {
-    dispatch({ type: "LOGOUT" });
+    dispatch(Logout());
   };
+
   return (
-    <div className="top">
-      <div className="topLeft">
-        <motion.i
-          whileHover={{ scale: 1.2 }}
-          className="topIcon fab fa-facebook-square"
-        ></motion.i>
-        <motion.i
-          whileHover={{ scale: 1.2 }}
-          className="topIcon fab fa-twitter-square"
-        ></motion.i>
-        <motion.i
-          whileHover={{ scale: 1.2 }}
-          className="topIcon fab fa-pinterest-square"
-        ></motion.i>
-        <motion.i
-          whileHover={{ scale: 1.2 }}
-          className="topIcon fab fa-instagram-square"
-        ></motion.i>
-      </div>
+    <nav className="top">
+      <div className="topLeft"></div>
 
       <div className="topCenter">
         <ul className="topList">
-          <motion.li whileHover={{ scale: 1.2 }} className="topListItem">
-            <Link className="link" to="/">
-              HOME
-            </Link>
-          </motion.li>
-          <motion.li whileHover={{ scale: 1.2 }} className="topListItem">
-            <Link className="link" to="/about">
-              ABOUT
-            </Link>
-          </motion.li>
-          <motion.li whileHover={{ scale: 1.2 }} className="topListItem">
-            <Link className="link" to="/contact">
-              CONTACT
-            </Link>
-          </motion.li>
-          <motion.li whileHover={{ scale: 1.2 }} className="topListItem">
-            <Link className="link" to="/write">
-              WRITE
-            </Link>
-          </motion.li>
-          <motion.li
-            whileHover={{ scale: 1.2 }}
-            className="topListItem"
-            onClick={handleLogout}
-          >
-            {user && "LOGOUT"}
-          </motion.li>
+          {navItems.map((item) => (
+            <NavItem key={item.label} label={item.label} path={item.path} />
+          ))}
+          {user && <NavItem label="LOGOUT" onClick={handleLogout} />}
         </ul>
       </div>
 
       <div className="topRight">
         {user ? (
           <Link to="/settings">
-            <img className="topImg" src={PF + user.profilePic} alt="" />
+            <img
+              className="topImg"
+              src={PF + user.profilePic}
+              alt={`${user.username}'s profile`}
+            />
           </Link>
         ) : (
           <ul className="topList">
-            <motion.li whileHover={{ scale: 1.2 }} className="topListItem">
-              <Link className="link" to="/login">
-                LOGIN
-              </Link>
-            </motion.li>
-            <motion.li whileHover={{ scale: 1.2 }} className="topListItem">
-              <Link className="link" to="/register">
-                REGISTER
-              </Link>
-            </motion.li>
+            <NavItem label="LOGIN" path="/login" />
+            <NavItem label="REGISTER" path="/register" />
           </ul>
         )}
-        {/* <i className="topSearchIcon fas fa-search"></i> */}
       </div>
-    </div>
+    </nav>
   );
 }

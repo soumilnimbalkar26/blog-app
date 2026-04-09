@@ -3,11 +3,15 @@ import "./header.css";
 export default function Header() {
   return (
     <div className="header">
-      <div className="headerTitles"></div>
+      <div className="headerTitles">
+        <span className="headerTitleSm">Unfold Your Stories</span>
+        <h1 className="headerTitleLg">The Modern Chronicle</h1>
+      </div>
+      <div className="headerImgOverlay"></div>
       <img
         className="headerImg"
-        src="https://images.unsplash.com/photo-1601153211050-ae2e1fa428d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z2FtaW5nJTIwd2FsbHBhcGVyfGVufDB8fDB8fHww&w=1000&q=80"
-        alt=""
+        src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=2070&auto=format&fit=crop"
+        alt="Hero Background"
       />
     </div>
   );

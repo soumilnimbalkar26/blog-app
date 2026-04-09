@@ -1,6 +1,14 @@
-.posts{
-    flex: 9;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 20px;
+.posts {
+  flex: 9;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  padding: 40px;
+}
+
+@media (max-width: 768px) {
+  .posts {
+    padding: 20px;
+    grid-template-columns: 1fr;
+  }
 }
