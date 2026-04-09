@@ -1,9 +1,9 @@
 import "./post.css";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { PF } from "../../config";
 
 export default function Post({ post }) {
-  const PF = "http://localhost:5000/images/";
   return (
     <motion.div whileHover={{ scale: 1.1 }} className="post">
       {post.photo && <img className="postImg" src={PF + post.photo} alt="" />}

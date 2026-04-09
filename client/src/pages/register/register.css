@@ -1,77 +1,88 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
 .register {
-  height: calc(100vh - 50px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /* background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
-    url("https://images.pexels.com/photos/317355/pexels-photo-317355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-  background-size: cover; */
-}
-
-.registerTitle {
-  font-size: 50px;
-  font-family: "poppins";
-  margin: 0;
-  text-align: center;
-  font-weight: 600;
-}
-
-.register-card {
-  height: fit-content;
-  width: 500px;
-  background-color: #f3f3f3;
-  padding: 36px;
-  border-radius: 6px;
-  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-.registerForm {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.registerForm > label {
-  margin: 10px 0;
-  font-size: 12px;
-  font-family: "poppins";
-}
-
-.registerInput {
-  padding: 10px;
-  background-color: white;
-  border: none;
-  border-radius: 4px;
-}
-.registerInput::placeholder {
-  font-size: 12px;
-  font-family: "poppins";
-}
-
-.registerButton {
-  margin-top: 20px;
-  cursor: pointer;
-  background-color: teal;
-  border: none;
-  color: white;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.registerLoginButton {
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  background-color: lightcoral;
-  cursor: pointer;
-  border: none;
-  padding: 10px;
-  color: white;
-  border-radius: 10px;
-}
+    height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-color);
+  }
+  
+  .register-card {
+    height: fit-content;
+    width: 450px;
+    background-color: var(--card-bg);
+    padding: 48px;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .registerTitle {
+    font-size: 36px;
+    font-family: var(--font-main);
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--text-main);
+  }
+  
+  .registerForm {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .registerForm > label {
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .registerInput {
+    padding: 15px;
+    background-color: var(--bg-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    color: var(--text-main);
+    margin-bottom: 24px;
+    transition: var(--transition-smooth);
+  }
+  
+  .registerInput:focus {
+    border-color: var(--primary-color);
+    outline: none;
+  }
+  
+  .registerButton {
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 30px;
+    padding: 15px;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+  }
+  
+  .registerButton:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(19, 91, 236, 0.4);
+  }
+  
+  .registerLoginButton {
+    margin-top: 24px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    color: var(--text-main);
+    border-radius: 30px;
+    font-size: 14px;
+    transition: var(--transition-smooth);
+  }
+  
+  .registerLoginButton:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+  

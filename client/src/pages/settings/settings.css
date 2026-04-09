@@ -1,28 +1,37 @@
 .settings {
   display: flex;
+  padding: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .settingsWrapper {
   flex: 9;
-  padding: 20px;
+  padding: 40px;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .settingsTitle {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 40px;
 }
 
 .settingsUpdateTitle {
   font-size: 30px;
-  margin-bottom: 20px;
-  color: lightcoral;
+  font-family: var(--font-main);
+  color: var(--primary-color);
 }
 
 .settingsDeleteTitle {
-  color: red;
-  font-size: 12px;
+  color: #ff4d4d;
+  font-size: 13px;
   cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .settingsForm {
@@ -30,53 +39,85 @@
   flex-direction: column;
 }
 
+.settingsForm > label {
+  font-size: 14px;
+  color: var(--text-dim);
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .settingsPP {
   display: flex;
   align-items: center;
-  margin: 10px 0;
+  margin: 15px 0;
+  gap: 20px;
 }
 
 .settingsPP > img {
-  width: 70px;
-  height: 70px;
-  border-radius: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
   object-fit: cover;
+  border: 4px solid var(--primary-color);
 }
 
 .settingsPPIcon {
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
-  background-color: lightcoral;
-  color: white;
+  background-color: var(--bg-color);
+  color: var(--text-main);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 10px;
   cursor: pointer;
+  transition: var(--transition-smooth);
 }
 
-.settingsForm > label {
-  font-size: 20px;
-  margin-top: 20px;
+.settingsPPIcon:hover {
+  background-color: var(--primary-color);
 }
 
 .settingsForm > input {
-  color: gray;
-  margin: 10px 0;
-  height: 30px;
-  border: none;
-  border-bottom: 1px solid lightgray;
+  padding: 15px;
+  background-color: var(--bg-color);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
+  font-size: 16px;
+  transition: var(--transition-smooth);
 }
 
-.settingsSubmit{
-    width: 150px;
-    align-self: center;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    background-color: teal;
-    padding: 10px;
-    margin-top: 20px;
-    cursor: pointer;
+.settingsForm > input:focus {
+  border-color: var(--primary-color);
+}
+
+.settingsSubmit {
+  width: 150px;
+  align-self: center;
+  margin-top: 40px;
+  padding: 15px;
+  border-radius: 30px;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+}
+
+.settingsSubmit:hover {
+  filter: brightness(1.2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(19, 91, 236, 0.4);
+}
+
+@media (max-width: 768px) {
+  .settings {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .settingsWrapper {
+    padding: 20px;
+  }
 }
